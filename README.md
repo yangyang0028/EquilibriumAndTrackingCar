@@ -1,5 +1,7 @@
 # 平衡小车+循迹
 
+基于 STM32F103C8T6 OpenMV MPU6050采用双闭环控制
+
 <!-- vscode-markdown-toc -->
 * 1. [速度闭环和直立闭环](#)
 * 2. [循迹](#-1)
@@ -14,10 +16,6 @@
 	autoSave=true
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
-
-
-
-基于 STM32F103C8T6 OpenMV MPU6050采用双闭环控制
 
 ##  1. <a name=''></a>速度闭环和直立闭环
 
