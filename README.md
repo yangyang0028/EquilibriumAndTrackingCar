@@ -19,7 +19,7 @@
 
 ##  1. <a name=''></a>速度闭环和直立闭环
 
-![ls](./image/ControlSystem.png)
+![ls](./Image/ControlSystem.png)
 
 MPU6050 采用DMP硬解，四元数， 转欧拉角 得到roll，pitch，yaw
 
@@ -27,7 +27,7 @@ MPU6050 采用DMP硬解，四元数， 转欧拉角 得到roll，pitch，yaw
 
 openMV 阈值化 色块查找 得到 x1、x2（两块roi里面的色块中心位置的x轴坐标）
 
-![ls](./image/Tracking.png)
+![ls](./Image/Tracking.png)
 
 循迹的前进逻辑是 x1与x2 相差越大 l(直行)速度越小
 
@@ -43,9 +43,9 @@ openMV 阈值化 色块查找 得到 x1、x2（两块roi里面的色块中心位
 
 ##  4. <a name='-1'></a>展示
 
-![ls](./image/EquilibriumAndTrackingCar.gif)
+![ls](./Image/EquilibriumAndTrackingCar.gif)
 
-![ls](./image/EquilibriumAndTrackingCar1.gif)
+![ls](./Image/EquilibriumAndTrackingCar1.gif)
 
 ##  5. <a name='-1'></a>未来改进
 
