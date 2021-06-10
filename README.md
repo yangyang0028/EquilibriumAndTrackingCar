@@ -1,6 +1,6 @@
 # 平衡小车+循迹
 
-基于 STM32F103C8T6 OpenMV MPU6050d 的平衡循迹小车
+基于 STM32F103C8T6 OpenMV MPU6050 的平衡循迹小车
 
 <!-- vscode-markdown-toc -->
 * 1. [速度闭环和直立闭环](#)
