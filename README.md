@@ -49,23 +49,3 @@ openMV 阈值化 色块查找 得到 x1、x2（两块roi里面的色块中心位
 
 ![ls](./Image/EquilibriumAndTrackingCar1.gif)
 
-##  5. <a name='-1'></a>未来改进
-
-###  5.1. <a name='-1'></a>算法部分
-
-```bash
-1，尝试着目标跟踪
-
-2，尝试 激光雷达 SLAM ROS 深度摄像头
-```
-
-###  5.2. <a name='-1'></a>控制部分
-
-```bash
-1，尝试FOC，驱动部分自己打板
-
-2，降低重心
-
-3，优化参数
-
-```

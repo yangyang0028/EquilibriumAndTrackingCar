@@ -206,8 +206,8 @@ void output(double l,double s){
 	}
 }
 double nums=0;
-double kp=0.2;
-double ki=0.01;		
+double kp=0.3;
+double ki=0.008;		
 double kd=0.0;	
 double last_e=0;              
 double ans=0;
@@ -217,9 +217,9 @@ int timm2=0;
 double vee=0;
 double ve=0;
 double vnums=0;
-double vkp=0.6;
+double vkp=0.8;
 double vki=0.006;		
-double vkd=2;
+double vkd=-1;
 double last_ve=0; 
 /* USER CODE END 0 */
 
@@ -279,6 +279,7 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1){
+			printf("output=%lf, pitch=%lf,", l, mpu_pose_msg.pitch);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -344,13 +345,15 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *UartHandle){
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	if (htim == (&htim2)){
 
-		ve=max(0,1.5-abs(x1-x2)/80.0)-l;
+		ve=max(0,1.5-abs(x1-x2)/320.0)-l;
+//		ve=2-l;
 		vee=ve-last_ve;		
 		vnums+=ve;
 		double vP=ve*vkp;
 		double vI=vnums*vki;
 		double vD=vee*vkd;	
 		double angle=vP+vI+vD;
+		angle=max(min(angle,5),-5);
 		read_dmp(&mpu_pose_msg);
 		double e=mpu_pose_msg.pitch-ans-angle;//3.8
 		double ee=e-last_e;
@@ -359,8 +362,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 		double I=nums*ki;
 		double D=ee*kd;		
 		l=P+I+D;
-		printf("P=%lf, I=%lf, D=%lf, output=%lf, ans=%lf, pitch=%lf, angle=%lf,\n", P, I, D, l, ans, mpu_pose_msg.pitch, angle);
-		
+		//printf("P=%lf, I=%lf, D=%lf, output=%lf, ans=%lf, pitch=%lf, angle=%lf,\n", P, I, D, l, ans, mpu_pose_msg.pitch, angle);
 		output(l,s);
 		last_e=e;
 		last_ve=ve;

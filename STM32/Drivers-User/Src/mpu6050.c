@@ -363,7 +363,7 @@ uint8_t dmp_i2c_read(unsigned char slave_addr, unsigned char reg_addr, unsigned 
 
 
 
-#define DEFAULT_MPU_HZ  (1000)			//输出的速度, 100Hz, 10ms
+#define DEFAULT_MPU_HZ  (100)			//输出的速度, 100Hz, 10ms
 //#define DEFAULT_MPU_HZ  (200)			//输出的速度, 200Hz, 20ms
 
 	
